@@ -10,6 +10,7 @@ h1 {
 }
 
 #colors {
+  font-size: 0.9rem;
   background: rgb(157, 233, 233);
   background: linear-gradient(
     270deg,
@@ -25,6 +26,7 @@ h1 {
 }
 
 #shades {
+  font-size: 0.9rem;
   background: rgb(55, 52, 52);
   background: linear-gradient(
     270deg,
