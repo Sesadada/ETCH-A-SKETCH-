@@ -1,9 +1,6 @@
 const container = document.querySelector(".container");
 let size = 10; //prompt("Which size?");
 numbers = [];
-let r = 247;
-let g = 235;
-let b = 233;
 
 const changeGridColor = (col) => {
   const overMouse = document.querySelectorAll(".gridItems");
@@ -34,8 +31,13 @@ const randomColor = () => {
 const addShade = () => {
   const overMouse = document.querySelectorAll(".gridItems");
   overMouse.forEach((box) => {
+    let r = 247;
+    let g = 235;
+    let b = 233;
+    base = `rgb(${r}, ${b}, ${g})`;
     box.addEventListener("mouseover", (e) => {
-      box.style.backgroundColor = `rgb(${(r -= 2)}, ${(b -= 2)}, ${(g -= 2)})`;
+      box.style.backgroundColor = `rgb(${(r -= 10)}, ${(b -= 10)}, ${(g -= 10)})`;
+      console.log(box.style.backgroundColor);
     });
   });
 };
