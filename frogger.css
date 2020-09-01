@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  background-color: rgb(247, 235, 233);
+}
+
+h1 {
+  margin-top: 5vh;
+  margin-bottom: 0.5vh;
+  color: salmon;
+}
+
+input {
+  border-style: dotted;
+  background-color: rgb(157, 233, 233);
+  border-color: salmon;
+  margin: 2.5vw;
+  color: grey;
+  font-family: inherit;
+  font-style: italic;
+  font-size: 1rem;
+  height: 1.6vh;
+  padding: 1.2vh;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  width: 50vw;
+  height: 50vw;
+  grid-gap: 0.2vw;
+  margin: auto;
+  justify-content: stretch;
+}
+
+.gridItems {
+  background-color: rgb(157, 233, 233);
+}
+
+button {
+  background-color: rgb(157, 233, 233);
+  border: none;
+  color: salmon;
+  font-family: inherit;
+  font-size: 0.8em;
+  padding: 1.2vh;
+  width: 5vw;
+}
