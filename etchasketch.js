@@ -1,9 +1,48 @@
 const container = document.querySelector(".container");
-
 let size = 10; //prompt("Which size?");
-createGrid(size);
+numbers = [];
 
-function createGrid(size) {
+const changeGridColor = (col) => {
+  const overMouse = document.querySelectorAll(".gridItems");
+  overMouse.forEach((box) => {
+    box.addEventListener("mouseover", (e) => {
+      box.style.backgroundColor = col;
+    });
+  });
+};
+
+const randomColor = () => {
+  const overMouse = document.querySelectorAll(".gridItems");
+  overMouse.forEach((box) => {
+    box.addEventListener("mouseover", (e) => {
+      ran =
+        "rgb(" +
+        Math.floor(Math.random() * 256) +
+        "," +
+        Math.floor(Math.random() * 256) +
+        "," +
+        Math.floor(Math.random() * 256) +
+        ")";
+      box.style.backgroundColor = ran;
+    });
+  });
+};
+
+const addShade = () => {
+  const overMouse = document.querySelectorAll(".gridItems");
+  overMouse.forEach((box) => {
+    let r = 247;
+    let g = 235;
+    let b = 233;
+    base = `rgb(${r}, ${b}, ${g})`;
+    box.addEventListener("mouseover", (e) => {
+      box.style.backgroundColor = `rgb(${(r -= 10)}, ${(b -= 10)}, ${(g -= 10)})`;
+      console.log(box.style.backgroundColor);
+    });
+  });
+};
+
+const createGrid = (size) => {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for (let s = 0; s < size * size; s++) {
@@ -11,15 +50,10 @@ function createGrid(size) {
     gridItems.classList.add("gridItems");
     container.append(gridItems);
   }
-  const overMouse = document.querySelectorAll(".gridItems");
-  overMouse.forEach((box) => {
-    box.addEventListener("mouseover", (e) => {
-      box.style.backgroundColor = "salmon";
-    });
-  });
-}
+  changeGridColor("salmon");
+};
 
-numbers = [];
+createGrid(size);
 
 const checker = (val) => {
   if (isNaN(val)) {
@@ -47,7 +81,17 @@ const getValue = () => {
 };
 getValue();
 
-const button = document.querySelector("button");
+const colors = document.getElementById("colors");
+colors.addEventListener("click", (e) => {
+  changeGridColor(randomColor());
+});
+
+const shades = document.getElementById("shades");
+shades.addEventListener("click", (e) => {
+  changeGridColor(addShade());
+});
+
+const button = document.getElementById("button");
 const reset = () => {
   button.addEventListener("click", (e) => {
     window.location = "";
@@ -55,21 +99,3 @@ const reset = () => {
 };
 
 reset();
-
-/*
-
-const value = document.getElementById("valueSize");
-const getValue = () => {
-  value.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      size = value.value;
-      createGrid(size);
-      event.preventDefault();
-    } else {
-      reset();
-    }
-  });
-};
-getValue();
-
-*/

@@ -9,6 +9,34 @@ h1 {
   color: salmon;
 }
 
+#colors {
+  font-size: 0.9rem;
+  background: rgb(157, 233, 233);
+  background: linear-gradient(
+    270deg,
+    rgba(157, 233, 233, 1) 0%,
+    rgba(183, 186, 204, 1) 28%,
+    rgba(211, 164, 168, 1) 58%,
+    rgba(228, 229, 141, 1) 77%,
+    rgba(250, 128, 114, 1) 100%
+  );
+  width: 8vw;
+  color: salmon;
+  margin: 2.5vw;
+}
+
+#shades {
+  font-size: 0.9rem;
+  background: rgb(55, 52, 52);
+  background: linear-gradient(
+    270deg,
+    rgba(55, 52, 52, 1) 0%,
+    rgba(247, 235, 234, 1) 100%
+  );
+  width: 8vw;
+  color: rgb(247, 235, 233);
+}
+
 input {
   border-style: dotted;
   background-color: rgb(157, 233, 233);
