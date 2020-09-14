@@ -1,3 +1,3 @@
 # etch a sketch
 
-It's a game
+An Odin Project exercise, please try it and draw your lines :)
